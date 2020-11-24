@@ -13,7 +13,7 @@ func Worker(s string) {
 	fmt.Printf("Received a message: %s\n", s)
 
 	time.AfterFunc(time.Second*timeSeconds, func() {
-		fmt.Printf("Congratulations! Your %d second timer finished.", timeSeconds)
+		fmt.Printf("\nCongratulations! Your %d second timer finished.", timeSeconds)
 	})
 	// defer timer.Stop()
 }
