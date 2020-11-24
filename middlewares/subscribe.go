@@ -13,6 +13,7 @@ func Subscribe() gin.HandlerFunc {
 		nc := c.MustGet("nc").(*nats.Conn)
 		nc.Subscribe("foo", func(m *nats.Msg) {
 			worker.Worker(string(m.Data))
+			m.Sub.Unsubscribe()
 		})
 	}
 }
